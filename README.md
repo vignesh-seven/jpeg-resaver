@@ -17,7 +17,9 @@ And it has a GUI (cool i guess).
 
 ## A few things to note
 If you want to mess with it:  
-```Written in Python 3.9 (32-bit)  ```
+```  
+Written in Python 3.9 (32-bit)  
+```
 ### Dependencies:
  - pillow  
 ```  
