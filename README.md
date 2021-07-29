@@ -15,5 +15,5 @@ If you want to make it better (or even copy it)
 Dependencies:
  - Python
  - tkinter (```pip install tkinter```)
- - TkinterDnD2 (follow this blog & install: [install tkDnD2](https://pythonguides.com/python-tkinter-drag-and-drop/))
+ - TkinterDnD2 (follow this blog: [install tkDnD2](https://pythonguides.com/python-tkinter-drag-and-drop/))
 
