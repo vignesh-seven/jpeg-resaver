@@ -11,9 +11,8 @@ Can be used when Photshop doesn't want to open your JPEG files that you just dow
 
 (more features coming soon)
 ### A few things to note
-If you want to mess with it
-
-Written in Python 3.9 (32-bit)
+If you want to mess with it.
+Written in Python 3.9 (32-bit).
 
 Dependencies:
  - Python
