@@ -1,7 +1,8 @@
 # JPEG Resaver
 
 ## What is this
-A little program to save you from Whatsapp's JPEG hell.  
+A little program to save you from "JPEG marker is missing" hell (for images downloaded from Whatsapp).  
+
 Can be used when Photshop doesn't want to open your JPEG files that you just downloaded from Whatsapp :)  
 
 ## How to use  
