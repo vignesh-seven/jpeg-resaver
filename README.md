@@ -13,7 +13,7 @@ Just drag the images you want to convert to .jpg to the program window.
 If you want to make it better (or even copy it) 
 
 Dependencies:
-	- Python
-	- tkinter (```pip install tkinter```)
-	- TkinterDnD2 (follow this blog & install it from [here](https://pythonguides.com/python-tkinter-drag-and-drop/))
+ - Python
+ - tkinter (```pip install tkinter```)
+ - TkinterDnD2 (follow this blog & install it from [here](https://pythonguides.com/python-tkinter-drag-and-drop/))
 
