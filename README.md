@@ -11,7 +11,7 @@ Can be used when Photshop doesn't want to open your JPEG files that you just dow
 
 (more features coming soon)
 ### A few things to note
-If you want to make it better (or even copy it) 
+If you want to mess with it
 
 Written in Python 3.9 (32-bit)
 
