@@ -19,6 +19,8 @@ And it has a GUI (cool i guess).
 If you want to mess with it:  
 ```Written in Python 3.9 (32-bit)  ```
 ### Dependencies:
- - pillow (```pip install Pillow```)
- - tkinter (```pip install tkinter```)
+ - pillow  
+```pip install Pillow```  
+ - tkinter  
+```pip install tkinter```   
  - TkinterDnD2 (follow this blog: [install tkDnD2](https://pythonguides.com/python-tkinter-drag-and-drop/))
