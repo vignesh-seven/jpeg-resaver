@@ -21,6 +21,7 @@ def convert(img_input):
 
 if __name__ == "__main__":
     from tkinter import *
+    from tkinter.tix import *
     from TkinterDnD2 import *
     import sys
     import os
@@ -56,11 +57,11 @@ if __name__ == "__main__":
             global new_dirname
             new_dirname = dirname
 
-            if (makeAFolder == 1):
-                full_new_dirname = os.path.join(dirname, just_dirname, "_resaved")
-                #os.mkdir(os.path.abspath(full_new_dirname))
-                print(full_new_dirname)
-                new_dirname = full_new_dirname
+            if (makeAFolder.get() == 1):
+                full_new_dirname = os.path.join(dirname, just_dirname + "_resaved")
+                os.mkdir(os.path.abspath(full_new_dirname))
+                print("make folder is CHECKED\n" + full_new_dirname)
+                new_dirname = os.path.abspath(full_new_dirname)
 
             for filename in files:
                 #print("Processing: " + filename)
@@ -85,7 +86,7 @@ if __name__ == "__main__":
     # Drop area config
     area = Canvas(frameForDrag,
                   width=window_width,
-                  height=window_height*0.9,
+                  height=window_height*0.85,
                   bg="#cccccc")
     area.create_text(window_width / 2,
                      window_height / 2,
@@ -100,13 +101,11 @@ if __name__ == "__main__":
     makeAFolder = IntVar() 
     FolderCheckBox = Checkbutton(frameForOptions, text = "Make a folder", 
                           variable = makeAFolder,
-                          onvalue = 1,
-                          offvalue = 0,
-                          height = int(window_height*0.1),
+                          height = int(window_height*0.15),
                           width = window_width)
     FolderCheckBox.pack()
 
-
+    
     ws.mainloop()
 
   
