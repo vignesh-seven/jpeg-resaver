@@ -22,7 +22,7 @@ def convert(img_input):
 if __name__ == "__main__":
     from tkinter import *
     from tkinter.tix import *
-    from TkinterDnD2 import *
+    from tkinterdnd2 import *
     import sys
     import os
     import time
