@@ -23,7 +23,9 @@ Written in Python 3.9 (32-bit)
 ```
 ### Dependencies:  
 To install:  
-```  pip install -r requirements.txt  ```  
+```  
+pip install -r requirements.txt
+```  
  - pillow  
  - tkinter  
  - tkinterdnd2
