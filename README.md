@@ -26,6 +26,7 @@ To install:
 ```  
 pip install -r requirements.txt
 ```  
- - pillow  
- - tkinter  
- - tkinterdnd2
+This will install the following Python Modules  
+ - Pillow  
+ - Tkinter  
+ - TkinterDnD2
