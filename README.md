@@ -20,7 +20,6 @@ If you want to mess with it:
 This program is written in Python 3.9.6 (32-bit)  
 ```
 ### Dependencies:  
-To install:  
 ```  
 pip install -r requirements.txt
 ```  
