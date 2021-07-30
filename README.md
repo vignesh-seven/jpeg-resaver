@@ -21,13 +21,9 @@ If you want to mess with it:
 ```  
 Written in Python 3.9 (32-bit)  
 ```
-### Dependencies:
+### Dependencies:  
+To install:  
+```  pip install -r requirements.txt  ```  
  - pillow  
-```  
-pip install Pillow  
-```  
  - tkinter  
-```  
-pip install tkinter  
-```  
- - TkinterDnD2 (follow this blog: [install tkDnD2](https://pythonguides.com/python-tkinter-drag-and-drop/))
+ - tkinterdnd2
