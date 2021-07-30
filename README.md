@@ -1,12 +1,10 @@
-# JPEG Resaver
+# JPEG Resaver  
+*A little program to save you from "JPEG marker is missing" hell (for images downloaded from Whatsapp).  
+
+A tool to re-encode JPEG/JPG files to JPG.  
 
 ## How to use  
 Just drag the images you want to convert to .jpg  
-
-## What is this
-A little program to save you from "JPEG marker is missing" hell (for images downloaded from Whatsapp).  
-
-Can be used when Photshop doesn't want to open your JPEG files that you just downloaded from Whatsapp :)  
 
 ## Why is this
 There are already a lot of ways to solve this issue, so why did I make this?  
