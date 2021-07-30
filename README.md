@@ -1,5 +1,5 @@
 # JPEG Resaver  
-*A little program to save you from "JPEG marker is missing" hell (for images downloaded from Whatsapp).  
+*A little program to save you from "JPEG marker is missing" hell (for images downloaded from Whatsapp)*  
 
 A tool to re-encode JPEG/JPG files to JPG.  
 
