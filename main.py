@@ -18,7 +18,42 @@ def convert(img_input):
     final_image.save(os.path.abspath(os.path.join(new_dirname, just_filename) + "_resaved.jpg"), "JPEG")
     # print("saved: " + os.path.abspath(os.path.join(new_dirname, just_filename) + "_resaved.jpg"))
 
+# triggered on drag n drop
+def start(event):   
+    files = ws.tk.splitlist(event.data)
+    # print(files)
+    # some path variables related to the image (for future features)    
+    dirname = os.path.dirname(files[0])
 
+    basename = os.path.basename(files[0])
+
+    global just_filename
+       
+    just_dirname = os.path.basename(dirname)
+
+    global new_dirname
+    new_dirname = dirname
+
+    
+
+    if (makeAFolder.get() == 1):
+        full_new_dirname = os.path.join(dirname, just_dirname + "_resaved")
+        os.mkdir(os.path.abspath(full_new_dirname))
+        # print("make folder is CHECKED\n" + full_new_dirname)
+        new_dirname = os.path.abspath(full_new_dirname)
+
+    for filename in files:
+        kind = filetype.guess(filename)
+        print(kind.mime)
+        if kind.mime == "image/jpeg":
+        #if filename.endswith(".jpeg") or filename.endswith(".jpg"):
+            print("The file is valid!")
+            convert(filename)
+            if (deleteInputImages.get() == 1):
+                os.remove(filename)
+        print("The file path: " + filename)
+    print("All Done!")
+        
 if __name__ == "__main__":
     from tkinter import *
     from tkinter.tix import *
@@ -27,52 +62,19 @@ if __name__ == "__main__":
     import os
     import time
     from PIL import Image, ImageFilter
+    import filetype
     
     global window_width
     global window_height
-    window_width = 500
+    window_width = 400
     window_height = 350
 
-    # the jpeg converter function
-    
-    # triggered on drag n drop
-    def start(event):   
-        files = ws.tk.splitlist(event.data)
-        # print(files)
-        # some path variables related to the image (for future features)    
-        dirname = os.path.dirname(files[0])
-
-        basename = os.path.basename(files[0])
-
-        global just_filename
-           
-        just_dirname = os.path.basename(dirname)
-
-        global new_dirname
-        new_dirname = dirname
-
-        if (makeAFolder.get() == 1):
-            full_new_dirname = os.path.join(dirname, just_dirname + "_resaved")
-            os.mkdir(os.path.abspath(full_new_dirname))
-            # print("make folder is CHECKED\n" + full_new_dirname)
-            new_dirname = os.path.abspath(full_new_dirname)
-
-        for filename in files:
-            # print("Processing: " + filename)
-            if filename.endswith(".jpeg") or filename.endswith(".jpg"):
-                print("The file is valid!")
-                convert(filename)
-                if (deleteInputImages.get() == 1):
-                    os.remove(filename)
-            print("The file path: " + filename)
-        print("All Done!")
-
-        
-    # Window config
+# Window config
     ws = TkinterDnD.Tk()
     ws.title("JPEG Resaver")
     ws.geometry(str(window_width) + "x" + str(window_height) + "+500+50")
     # ws.pack()
+    ws.resizable(True, False)
     
     frameForDrag = Frame(ws)
     frameForDrag.pack()
@@ -85,7 +87,7 @@ if __name__ == "__main__":
                   width=window_width,
                   height=window_height*0.85,
                   bg="#cccccc")
-    area.create_text(window_width / 2,
+    text_on_canvas = area.create_text(window_width / 2,
                      window_height / 2,
                      fill="#303030",
                      font="Arial 18 italic", text="Drag files here")
@@ -93,6 +95,8 @@ if __name__ == "__main__":
     area.drop_target_register(DND_FILES)
     area.dnd_bind('<<Drop>>', start)
     area.pack()
+
+    #area.itemconfig(text_on_canvas, text=status_text)
 
     global makeAFolder
     makeAFolder = IntVar() 
@@ -119,4 +123,20 @@ if __name__ == "__main__":
     
     ws.mainloop()
 
+
+
+
+
+
+
+    # the jpeg converter function
+    
+    
+
+
+
+    
+
+        
+    
   
