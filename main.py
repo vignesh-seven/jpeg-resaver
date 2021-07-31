@@ -30,7 +30,7 @@ if __name__ == "__main__":
     
     global window_width
     global window_height
-    window_width = 500
+    window_width = 400
     window_height = 350
 
     # the jpeg converter function
