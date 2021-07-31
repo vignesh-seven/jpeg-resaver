@@ -16,8 +16,15 @@ def convert(img_input):
 
     # save the composite as a jpg
     final_image.save(os.path.abspath(os.path.join(new_dirname, just_filename) + "_resaved.jpg"), "JPEG")
-    # print("saved: " + os.path.abspath(os.path.join(new_dirname, just_filename) + "_resaved.jpg"))
+    print("saved: " + os.path.abspath(os.path.join(new_dirname, just_filename) + "_resaved.jpg"))
 
+def change_info_text():
+    #threading.Timer(3.0, change_info_text)
+    time.sleep(3)
+    info_text = "Drag files here"
+    area.itemconfig(text_on_canvas, text=info_text)
+
+    
 # triggered on drag n drop
 def start(event):   
     files = ws.tk.splitlist(event.data)
@@ -35,6 +42,7 @@ def start(event):
     new_dirname = dirname
 
     
+    
 
     if (makeAFolder.get() == 1):
         full_new_dirname = os.path.join(dirname, just_dirname + "_resaved")
@@ -44,14 +52,22 @@ def start(event):
 
     for filename in files:
         kind = filetype.guess(filename)
-        print(kind.mime)
+        #print(kind.mime)
         if kind.mime == "image/jpeg":
         #if filename.endswith(".jpeg") or filename.endswith(".jpg"):
             print("The file is valid!")
             convert(filename)
             if (deleteInputImages.get() == 1):
                 os.remove(filename)
-        print("The file path: " + filename)
+        else:
+            print("INVALID FILE TYPE: " + kind.mime)
+            info_text = "Invalid File Type!"
+            area.itemconfig(text_on_canvas, text=info_text)
+            change_info_text()
+            
+            
+        #print("The file path: " + filename)
+
     print("All Done!")
         
 if __name__ == "__main__":
@@ -61,6 +77,7 @@ if __name__ == "__main__":
     import sys
     import os
     import time
+    import threading
     from PIL import Image, ImageFilter
     import filetype
     
@@ -69,7 +86,7 @@ if __name__ == "__main__":
     window_width = 400
     window_height = 350
 
-# Window config
+    # Window config
     ws = TkinterDnD.Tk()
     ws.title("JPEG Resaver")
     ws.geometry(str(window_width) + "x" + str(window_height) + "+500+50")
@@ -83,6 +100,9 @@ if __name__ == "__main__":
     frameForOptions.pack(side=tkinter.BOTTOM, fill=tkinter.Y)
 
     # Drop area config
+    global info_text
+    info_text = "Drag files here"
+    
     area = Canvas(frameForDrag,
                   width=window_width,
                   height=window_height*0.85,
@@ -90,7 +110,7 @@ if __name__ == "__main__":
     text_on_canvas = area.create_text(window_width / 2,
                      window_height / 2,
                      fill="#303030",
-                     font="Arial 18 italic", text="Drag files here")
+                     font="Arial 18 italic", text=info_text)
     area.pack(side=LEFT)
     area.drop_target_register(DND_FILES)
     area.dnd_bind('<<Drop>>', start)
