@@ -30,14 +30,11 @@ if __name__ == "__main__":
     
     global window_width
     global window_height
-    window_width = 400
+    window_width = 500
     window_height = 350
-    
-    
+
     # the jpeg converter function
     
-
-
     # triggered on drag n drop
     def start(event):   
         files = ws.tk.splitlist(event.data)
@@ -65,6 +62,8 @@ if __name__ == "__main__":
             if filename.endswith(".jpeg") or filename.endswith(".jpg"):
                 print("The file is valid!")
                 convert(filename)
+                if (deleteInputImages.get() == 1):
+                    os.remove(filename)
             print("The file path: " + filename)
         print("All Done!")
 
@@ -78,8 +77,8 @@ if __name__ == "__main__":
     frameForDrag = Frame(ws)
     frameForDrag.pack()
 
-    frameForOptions = Frame(ws)
-    frameForOptions.pack()
+    frameForOptions = Frame(ws, height=window_height*0.15, bg = "green")
+    frameForOptions.pack(side=tkinter.BOTTOM, fill=tkinter.Y)
 
     # Drop area config
     area = Canvas(frameForDrag,
@@ -99,9 +98,23 @@ if __name__ == "__main__":
     makeAFolder = IntVar() 
     FolderCheckBox = Checkbutton(frameForOptions, text = "Make a folder", 
                           variable = makeAFolder,
-                          height = int(window_height*0.15),
-                          width = window_width)
-    FolderCheckBox.pack()
+                          #height = int(window_height*0.15),
+                          width = 25,
+
+                          #expand=True
+                                 )
+    FolderCheckBox.pack(side=tkinter.LEFT, fill=tkinter.Y, expand=False)
+
+    global deleteInputImages
+    deleteInputImages = IntVar() 
+    DeleteSourceCheckBox = Checkbutton(frameForOptions, text = "Delete input files", 
+                          variable = deleteInputImages,
+                          height = int(window_height*0.1),
+                          width = 25,
+                          #bg = "blue"
+                          #expand=True
+                                 )
+    DeleteSourceCheckBox.pack(side=tkinter.LEFT, fill=tkinter.Y, expand=False)
 
     
     ws.mainloop()
