@@ -1,4 +1,6 @@
-![logo](https://user-images.githubusercontent.com/59286418/127771352-16abf857-ce08-4e98-b516-a0e82df6d351.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/59286418/127771463-83c7e022-107d-402f-9a1b-d75d20b57995.png" />
+</p>
 # JPEG Resaver  
 *A little program to save you from "JPEG marker is missing" hell (for images downloaded from Whatsapp)*  
 
