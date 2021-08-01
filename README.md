@@ -27,3 +27,4 @@ This will install the following Python Modules
  - Pillow  
  - Tkinter  
  - TkinterDnD2
+ - filetype
