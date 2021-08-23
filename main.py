@@ -75,6 +75,7 @@ if __name__ == "__main__":
     from PIL import Image, ImageFilter
     import filetype
     
+    
     global window_width
     global window_height
     window_width = 400
@@ -90,6 +91,8 @@ if __name__ == "__main__":
     screenheight = root.winfo_screenheight()
     alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
     root.geometry(alignstr)
+    root.minsize(240, 100)
+
     #root.resizable(width=False, height=False)
     root.rowconfigure(0, weight=10)
     root.rowconfigure(1, weight=1)
