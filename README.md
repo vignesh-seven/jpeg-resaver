@@ -21,7 +21,7 @@ There are already a lot of ways to solve this issue, so why did I make this?
 Because the other methods take a lot of time and effort for what they do, and involve moving all image files to a seperate folder and/or collecting output images from another folder. But it's way too much work if you want to use it for a few images frequently (like >5 images each time more than 5 times a day). 
 
 This program allows you to quickly drag & drop your images and it handles the rest.
-And it has a GUI (cool i guess).  
+And it has a GUI (cool, i guess).  
 
 ## A few things to note...
 If you want to mess with it:  
