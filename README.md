@@ -11,8 +11,9 @@ A tool to re-encode JPEG/JPG files to JPG.
 Just drag the images you want to convert to .jpg  
 
 ## Features  
- - Move all output files to a new folder.
- - Delete input images after converting.
+ - Can output files to a new folder.
+ - Works with TIFF/PNG/JPG files (Flattens the image in case of TIFF).
+ - Can delete input images after converting.
 
 ## Why is this?
 There are already a lot of ways to solve this issue, so why did I make this?  
